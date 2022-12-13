@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.notebuddy.view.fragments.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/gotobottomSheetFrag"
+            app:destination="@id/bottomSheetFrag" />
+        <action
+            android:id="@+id/gotoaddEditFragment"
+            app:destination="@id/addEditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/alarmFragment"
+        android:name="com.example.notebuddy.AlarmFragment"
+        android:label="fragment_alarm"
+        tools:layout="@layout/fragment_alarm" />
+    <fragment
+        android:id="@+id/weatherFragment"
+        android:name="com.example.notebuddy.WeatherFragment"
+        android:label="fragment_weather"
+        tools:layout="@layout/fragment_weather" />
+    <dialog
+        android:id="@+id/bottomSheetFrag"
+        android:name="com.example.notebuddy.BottomSheetFrag"
+        android:label="BottomSheetFrag" />
+    <fragment
+        android:id="@+id/addEditFragment"
+        android:name="com.example.notebuddy.view.fragments.AddEditFragment"
+        android:label="AddEditFragment" >
+        <argument
+            android:name="myNote"
+            app:argType="com.example.notebuddy.myData.MyNotes" />
+        <action
+            android:id="@+id/action_addEditFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
